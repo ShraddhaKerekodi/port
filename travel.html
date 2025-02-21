@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        
+        h1, h2, h3 {
+            text-align: center;
+            color: #333;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+        
+        h2 {
+            margin-top: 30px;
+            font-size: 2em;
+            color: #444;
+        }
+        
+        h3 {
+            font-size: 1.5em;
+            color: #555;
+        }
+        
+        p {
+            text-align: justify;
+            padding: 0 15px;
+        }
+        header {
+            background-image: url('travel.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background: #ff9800;
+            border-radius: 4px;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        
+        ul li {
+            margin-bottom: 10px;
+        }
+        article {
+            background-color: #fafafa;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 4px;
+        }
+        form {
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        button[type="submit"] {
+            background: #ff9800;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button[type="submit"]:hover {
+            background: #e68900;
+        }
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Wanderlust Travel Agency</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h2>Explore the World with Us!</h2>
+        <p>Your journey to the most beautiful places on earth begins here.</p>
+    </section>
+    <section id="destinations">
+        <h2>Popular Destinations</h2>
+        <ul>
+            <li>Paris, France</li>
+            <li>Bali, Indonesia</li>
+            <li>Kyoto, Japan</li>
+            <li>New York, USA</li>
+        </ul>
+    </section>
+    <section id="packages">
+        <h2>Travel Packages</h2>
+        <article>
+            <h3>Summer Special</h3>
+            <p>Enjoy 7 days in Bali with a 20% discount on all activities!</p>
+        </article>
+        <article>
+            <h3>Romantic Getaway</h3>
+            <p>Experience the charm of Paris with exclusive couples packages.</p>
+        </article>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 Wanderlust Travel Agency. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
