@@ -28,6 +28,9 @@
             margin-top: 30px;
             font-size: 2em;
             color: #333;
+            border-bottom: 2px solid #ff9800;
+            display: inline-block;
+            padding-bottom: 5px;
         }
         
         p {
@@ -67,12 +70,57 @@
         nav ul li a:hover {
             color: #ff9800;
         }
-        h2 {
-            border-bottom: 2px solid #ff9800;
-            display: inline-block;
-            padding-bottom: 5px;
+
+        /* Hidden nav items */
+        .hidden-nav {
+            display: none;
         }
-        
+
+        /* Show hidden nav items after registration */
+        .show-nav {
+            display: inline;
+        }
+
+        /* Registration Form */
+        .register-form {
+            display: none;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            padding: 20px;
+            width: 50%;
+        }
+
+        .register-form h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .register-form input[type="text"],
+        .register-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .register-form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .register-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
         img {
             width: 30%;
             height: auto;
@@ -81,7 +129,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        
+
         article {
             background-color: #fff;
             border-radius: 8px;
@@ -89,26 +137,17 @@
             margin: 20px;
             padding: 20px;
         }
-        
+
         hr {
             border: 0;
             height: 1px;
             background: #ccc;
             margin: 30px 0;
         }
-        
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #333;
-            color: #fff;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        </style>
+    </style>
 </head>
 <body>
+
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -116,18 +155,23 @@
             <li><a href="#technology">Technology</a></li>
             <li><a href="#sports">Sports</a></li>
             <li><a href="#entertainment">Entertainment</a></li>
-            <li><a href="#health">Health</a></li>
-            <li><a href="#business">Business</a></li>
-            <li><a href="#science">Science</a></li>
-            <li><a href="#travel">Travel</a></li>
-            <li><a href="#opinion">Opinion</a></li>
-            <li><a href="#local">Local</a></li>
+            <li>
+                <button id="readMoreBtn" style="background-color: #ff9800; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                    Read More
+                </button>
+            </li>
+            <li class="hidden-nav" id="healthNav"><a href="#health">Health</a></li>
+            <li class="hidden-nav" id="businessNav"><a href="#business">Business</a></li>
+            <li class="hidden-nav" id="scienceNav"><a href="#science">Science</a></li>
+            <li class="hidden-nav" id="opinionNav"><a href="#opinion">Opinion</a></li>
+            <li class="hidden-nav" id="localNav"><a href="#local">Local</a></li>
         </ul>
     </nav>
 
     <h1>Latest News</h1>
-    
-    <h2 id="world">Headline 1: Global Event Update</h2>
+
+    <article>
+        <h2 id="world">Headline 1: Global Event Update</h2>
     <img src="download.jpg" alt="News Image">
     <p>Breaking news on a major global event affecting millions. Stay informed with the latest updates and analysis.</p>
 
@@ -184,6 +228,38 @@
     <h2 id="local">Headline 10: Local News</h2>
     <img src="loc.jpg" alt="News Image">
     <p>Stay updated with the latest local news, community events, and stories that matter to you.</p>
+    </article>
 
+    <!-- Registration Form -->
+    <div class="register-form" id="registerForm">
+        <h2>Register to Continue</h2>
+        <form id="form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        // Show registration form on "Read More" click
+        document.getElementById('readMoreBtn').addEventListener('click', function() {
+            document.getElementById('registerForm').style.display = 'block';
+        });
+
+        // Handle form submission
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Registration successful!');
+
+            // Show hidden navigation items
+            document.querySelectorAll('.hidden-nav').forEach(item => {
+                item.classList.add('show-nav');
+            });
+
+            // Hide registration form and "Read More" button
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('readMoreBtn').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
