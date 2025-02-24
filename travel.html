@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Agency</title>
+    <title>Wanderlust Travel Agency</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #5e5e8e;
+            background-color: #a4a4e5;
             color: #333;
         }
         
@@ -39,6 +39,7 @@
             text-align: justify;
             padding: 0 15px;
         }
+        
         header {
             background-image: url('travel.jpg');
             background-size: cover;
@@ -73,6 +74,7 @@
             background: #ff9800;
             border-radius: 4px;
         }
+        
         section {
             padding: 20px;
             margin: 20px;
@@ -80,15 +82,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        
-        ul li {
-            margin-bottom: 10px;
-        }
+
         article {
             background-color: #fafafa;
             border-left: 4px solid #ff9800;
@@ -96,6 +90,7 @@
             margin: 15px;
             border-radius: 4px;
         }
+
         form {
             text-align: center;
             max-width: 400px;
@@ -108,6 +103,7 @@
         
         input[type="text"],
         input[type="email"],
+        input[type="password"],
         textarea {
             width: 100%;
             padding: 10px;
@@ -130,6 +126,7 @@
         button[type="submit"]:hover {
             background: #e68900;
         }
+        
         footer {
             text-align: center;
             padding: 15px 0;
@@ -137,7 +134,16 @@
             color: #fff;
             margin-top: 20px;
         }
-        </style>
+
+        /* Thank You Message Styles */
+        #thank-you-message {
+            display: none;
+            text-align: center;
+            font-size: 2.5em;
+            color: #28a745;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -148,22 +154,26 @@
                 <li><a href="#destinations">Destinations</a></li>
                 <li><a href="#packages">Packages</a></li>
                 <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#register">Register</a></li>
             </ul>
         </nav>
     </header>
+
     <section id="home">
         <h2>Explore the World with Us!</h2>
-        <p>Your journey to the most beautiful places on earth begins here.</p>
+        <p>Your journey to the most beautiful places on earth begins here. Experience unforgettable adventures with Wanderlust Travel Agency.</p>
     </section>
+
     <section id="destinations">
         <h2>Popular Destinations</h2>
         <ul>
-            <li>Paris, France</li>
-            <li>Bali, Indonesia</li>
-            <li>Kyoto, Japan</li>
-            <li>New York, USA</li>
+            <li>Paris, France - The City of Love and Lights</li>
+            <li>Bali, Indonesia - Exotic beaches and vibrant culture</li>
+            <li>Kyoto, Japan - Timeless temples and beautiful cherry blossoms</li>
+            <li>New York, USA - The city that never sleeps</li>
         </ul>
     </section>
+
     <section id="packages">
         <h2>Travel Packages</h2>
         <article>
@@ -175,20 +185,40 @@
             <p>Experience the charm of Paris with exclusive couples packages.</p>
         </article>
     </section>
+
     <section id="contact">
         <h2>Contact Us</h2>
         <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
             <button type="submit">Submit</button>
         </form>
     </section>
+
+    <section id="register">
+        <h2>Register with Us</h2>
+        <form id="register-form">
+            <input type="text" name="reg-name" placeholder="Full Name" required>
+            <input type="email" name="reg-email" placeholder="Email" required>
+            <input type="password" name="reg-password" placeholder="Password" required>
+            <input type="password" name="reg-confirm-password" placeholder="Confirm Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <div id="thank-you-message">Thank You for Registering!</div>
+    </section>
+
     <footer>
         <p>&copy; 2025 Wanderlust Travel Agency. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript to handle form submission and show thank you message
+        document.getElementById("register-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("register-form").style.display = "none";
+            document.getElementById("thank-you-message").style.display = "block";
+        });
+    </script>
 </body>
 </html>
