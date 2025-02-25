@@ -148,6 +148,7 @@
 <body>
     <header>
         <h1>Welcome to Wanderlust Travel Agency</h1>
+        <p id="greeting"></p>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -167,10 +168,10 @@
     <section id="destinations">
         <h2>Popular Destinations</h2>
         <ul>
-            <li>Paris, France - The City of Love and Lights</li>
-            <li>Bali, Indonesia - Exotic beaches and vibrant culture</li>
-            <li>Kyoto, Japan - Timeless temples and beautiful cherry blossoms</li>
-            <li>New York, USA - The city that never sleeps</li>
+            <li>Paris, France</li>
+            <li>Bali, Indonesia</li>
+            <li>Kyoto, Japan</li>
+            <li>New York, USA</li>
         </ul>
     </section>
 
@@ -186,23 +187,13 @@
         </article>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-
     <section id="register">
         <h2>Register with Us</h2>
         <form id="register-form">
             <input type="text" name="reg-name" placeholder="Full Name" required>
             <input type="email" name="reg-email" placeholder="Email" required>
-            <input type="password" name="reg-password" placeholder="Password" required>
-            <input type="password" name="reg-confirm-password" placeholder="Confirm Password" required>
+            <input type="password" id="reg-password" placeholder="Password" required>
+            <input type="password" id="reg-confirm-password" placeholder="Confirm Password" required>
             <button type="submit">Register</button>
         </form>
         <div id="thank-you-message">Thank You for Registering!</div>
@@ -213,11 +204,28 @@
     </footer>
 
     <script>
-        // JavaScript to handle form submission and show thank you message
+        // Ternary Operator for Greeting
+        let currentHour = new Date().getHours();
+        let greeting = currentHour < 12 ? "Good Morning!" : "Good Evening!";
+        document.getElementById('greeting').innerText = greeting;
+
+        // Arithmetic and Assignment Operators
+        let destinations = 4;
+        let packages = 2;
+        let totalOptions = destinations + packages;
+        console.log("Total Options Available:", totalOptions);
+
+        // Comparison and Logical Operators
         document.getElementById("register-form").addEventListener("submit", function(event) {
             event.preventDefault();
-            document.getElementById("register-form").style.display = "none";
-            document.getElementById("thank-you-message").style.display = "block";
+            let password = document.getElementById("reg-password").value;
+            let confirmPassword = document.getElementById("reg-confirm-password").value;
+            if (password === confirmPassword && password.length >= 6) {
+                document.getElementById("register-form").style.display = "none";
+                document.getElementById("thank-you-message").style.display = "block";
+            } else {
+                alert("Passwords do not match or are too short (min 6 characters).");
+            }
         });
     </script>
 </body>
