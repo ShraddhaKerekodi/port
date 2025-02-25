@@ -242,24 +242,42 @@
 
     <script>
         // Show registration form on "Read More" click
-        document.getElementById('readMoreBtn').addEventListener('click', function() {
-            document.getElementById('registerForm').style.display = 'block';
+document.getElementById('readMoreBtn').addEventListener('click', function() {
+    // Using ternary operator to toggle form visibility
+    document.getElementById('registerForm').style.display = 
+        document.getElementById('registerForm').style.display === 'block' ? 'none' : 'block';
+});
+
+// Handle form submission
+document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Logical operator to check if both fields are filled
+    let name = document.querySelector('input[name="name"]').value;
+    let email = document.querySelector('input[name="email"]').value;
+    if (name && email) {
+        alert('Registration successful!');
+        
+        // Using assignment operator to update UI
+        document.querySelectorAll('.hidden-nav').forEach(item => {
+            item.classList.add('show-nav');
         });
 
-        // Handle form submission
-        document.getElementById('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Registration successful!');
+        // Hide registration form and "Read More" button
+        document.getElementById('registerForm').style.display = 'none';
+        document.getElementById('readMoreBtn').style.display = 'none';
+    } else {
+        alert('Please fill all fields!');
+    }
+});
 
-            // Show hidden navigation items
-            document.querySelectorAll('.hidden-nav').forEach(item => {
-                item.classList.add('show-nav');
-            });
+// Counter example using increment operator
+let clickCounter = 0;
+document.getElementById('readMoreBtn').addEventListener('click', function() {
+    clickCounter++;
+    console.log('Read More button clicked ' + clickCounter + ' times');
+});
 
-            // Hide registration form and "Read More" button
-            document.getElementById('registerForm').style.display = 'none';
-            document.getElementById('readMoreBtn').style.display = 'none';
-        });
     </script>
 </body>
 </html>

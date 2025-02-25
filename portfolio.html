@@ -99,7 +99,7 @@
             width: 100%;
             bottom: 0;
         }
-        </style>
+    </style>
 </head>
 <body>
     <nav>
@@ -113,6 +113,7 @@
     </nav>
 
     <h1 id="home">Welcome to My Portfolio</h1>
+    <p id="greeting"></p>
     <p>Hello! I'm a passionate developer eager to create innovative solutions and impactful projects.</p>
 
     <hr>
@@ -143,11 +144,41 @@
     <h3>Project 3: Blog Application</h3>
     <p>A blog platform with user authentication, post creation, and commenting features.</p>
 
+    <p>Total Projects: <span id="total-projects"></span></p>
+
     <hr>
 
     <h2 id="contact">Contact Me</h2>
     <p>Email: shraddhakerekodii@gmail.com</p>
     <p>GitHub: <a href="#">https://github.com/ShraddhaKerekodi</a></p>
 
+    <script>
+        let project1 = 1;
+        let project2 = 1;
+        let project3 = 1;
+        let totalProjects = project1 + project2 + project3;
+        document.getElementById('total-projects').innerText = totalProjects;
+        let bonusProjects = 0;
+        bonusProjects += 2; 
+        totalProjects += bonusProjects;
+        console.log("Total Projects with Bonus:", totalProjects);
+        let visitedProjects = confirm("Have you visited the Projects section?");
+        if (visitedProjects) {
+            console.log("User has visited Projects section");
+        } else {
+            console.log("User has not visited Projects section");
+        }
+
+        let isInterested = confirm("Are you interested in seeing more projects?");
+        if (visitedProjects && isInterested) {
+            alert("Stay tuned for more projects coming soon!");
+        } else if (visitedProjects || isInterested) {
+            alert("Thanks for checking out the projects!");
+        }
+
+        let currentHour = new Date().getHours();
+        let greeting = currentHour < 12 ? "Good Morning!" : "Good Evening!";
+        document.getElementById('greeting').innerText = greeting;
+    </script>
 </body>
 </html>
