@@ -257,13 +257,11 @@ document.getElementById('form').addEventListener('submit', function(event) {
     let email = document.querySelector('input[name="email"]').value;
     if (name && email) {
         alert('Registration successful!');
-        
-        // Using assignment operator to update UI
+
         document.querySelectorAll('.hidden-nav').forEach(item => {
             item.classList.add('show-nav');
         });
 
-        // Hide registration form and "Read More" button
         document.getElementById('registerForm').style.display = 'none';
         document.getElementById('readMoreBtn').style.display = 'none';
     } else {
@@ -271,7 +269,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
     }
 });
 
-// Counter example using increment operator
+
 let clickCounter = 0;
 document.getElementById('readMoreBtn').addEventListener('click', function() {
     clickCounter++;
